@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPD Wilshire Division 07 - L.A Community RP</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #003366; color: white; padding: 20px; text-align: center; }
+        nav { background-color: #004488; padding: 10px; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+        nav li { margin: 0 10px; }
+        nav a { color: white; text-decoration: none; }
+        section { padding: 20px; max-width: 1200px; margin: 0 auto; }
+        footer { background-color: #003366; color: white; text-align: center; padding: 10px; }
+        img { max-width: 100%; height: auto; }
+        .logo { width: 150px; }
+        .rank-img { width: 100px; height: auto; }
+        form { max-width: 600px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input, textarea, select { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        button { background-color: #004488; color: white; padding: 12px 20px; border: none; cursor: pointer; border-radius: 4px; }
+        button:hover { background-color: #003366; }
+        .structure { display: flex; flex-direction: column; }
+        .level { margin: 10px 0; padding: 15px; border: 1px solid #ccc; border-radius: 8px; background: #fff; }
+        .officer-month { text-align: center; background: #e3f2fd; padding: 20px; border-radius: 8px; }
+        .history-timeline { background: #fff; padding: 15px; margin: 10px 0; border-left: 5px solid #004488; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Seal_of_the_Los_Angeles_Police_Department.png" alt="LAPD Logo" class="logo">
+        <h1>LAPD Wilshire Division 07</h1>
+        <p>L.A Community RP Sunucusu - FiveM Los Angeles Temalı</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Ana Sayfa</a></li>
+            <li><a href="#about">Hakkımızda</a></li>
+            <li><a href="#culture">Kültür & Vizyon</a></li>
+            <li><a href="#history">Wilshire Tarihi</a></li>
+            <li><a href="#ranks">Rütbeler</a></li>
+            <li><a href="#org">Organizasyon</a></li>
+            <li><a href="#apply">Başvuru</a></li>
+            <li><a href="#officer">Ayın Memuru</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h2>Hoş Geldiniz</h2>
+        <p>LAPD Wilshire Division 07, L.A Community sunucusunda gerçekçi LAPD rol yapma deneyimi sunar. Mid-Wilshire bölgesinde devriye at, suçla mücadele et, Los Angeles’ın kalbinde görev yap!</p>
+        <p>Discord: <a href="https://discord.gg/lapdtest" style="color:#004488; font-weight:bold;">discord.gg/lapdtest</a></p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/LAPD_Wilshire_Division_Station.jpg/1280px-LAPD_Wilshire_Division_Station.jpg" alt="Wilshire Division 07" style="border-radius:8px; margin-top:15px;">
+    </section>
+
+    <section id="about">
+        <h2>Hakkımızda</h2>
+        <p>Los Angeles Polis Departmanı (LAPD), Amerika’nın en büyük ve en köklü polis teşkilatlarından biridir. 1869’da kurulan LAPD, şehrin büyümesiyle birlikte sürekli evrim geçirmiştir. Wilshire Division 07, Koreatown, Mid-Wilshire, Miracle Mile gibi bölgeleri kapsayan, en yoğun ve çeşitli karakollardan biridir.</p>
+    </section>
+
+    <section id="history">
+        <h2>Wilshire Division (07) İstasyonu Tarihi</h2>
+        <p><strong>Kuruluş:</strong> 1922 (Güncel bina: 1959)<br><strong>Adres:</strong> 4861 Venice Boulevard, Los Angeles, CA 90019</p>
+        <div class="history-timeline"><h3>1922 – İlk Kuruluş</h3><p>Los Angeles’ın hızla büyüyen orta-batı bölgesine hizmet için kuruldu.</p></div>
+        <div class="history-timeline"><h3>1925 – İkinci Konum</h3><p>4526 West Pico Boulevard’a taşındı.</p></div>
+        <div class="history-timeline"><h3>1959 – Mevcut Bina</h3><p>Venice Boulevard’daki modern bina açıldı.</p></div>
+        <div class="history-timeline"><h3>1992 Los Angeles İsyanları</h3><p>Bölge ağır etkilendi, ekipler günlerce aralıksız görev yaptı.</p></div>
+        <div class="history-timeline"><h3>1994 Northridge Depremi</h3><p>Kurtarma ve güvenlik operasyonlarında kilit rol oynadı.</p></div>
+    </section>
+
+    <section id="apply">
+        <h2>Başvuru Formu</h2>
+        <form id="applicationForm">
+            <label>Ad Soyad:</label>
+            <input type="text" id="name" required>
+            <label>Discord Kullanıcı Adı:</label>
+            <input type="text" id="discord" required>
+            <label>Yaş:</label>
+            <input type="number" id="age" required min="16">
+            <label>FiveM RP Deneyimin:</label>
+            <textarea id="experience" rows="4" required></textarea>
+            <label>Neden LAPD Wilshire 07?</label>
+            <textarea id="why" rows="4" required></textarea>
+            <label>Ek
