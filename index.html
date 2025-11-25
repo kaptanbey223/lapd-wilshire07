@@ -1,332 +1,237 @@
-Anladım\! Canlı bir site oluşturup yayınlayamasam da, belirlediğiniz **Mid-Wilshire 07 Polis Karakolu** konseptine uygun, profesyonel bir görünüme sahip bir **HTML5 ve CSS3 taslağı** hazırlayabilirim.
-
-Bu taslak, bir geliştiricinin alıp üzerine backend (Discord Webhook vb.) entegrasyonlarını yapabileceği tam bir ön yüz (frontend) yapısıdır.
-
-Aşağıdaki kodları bir $\text{.html}$ dosyası olarak kaydedebilir ve tarayıcınızda açabilirsiniz.
-
------
-
-```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mid-Wilshire 07 Polis İstasyonu - LAPD RP</title>
-    <style>
-        /* CSS Başlangıcı */
-        :root {
-            --bg-color: #121212; /* Koyu Gri */
-            --accent-color: #4A90E2; /* Mavi Vurgu */
-            --text-color: #FFFFFF; /* Beyaz Metin */
-            --card-bg: #1e1e1e;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mid-Wilshire 07 — LAPD Roleplay</title>
+  <style>
+    :root{
+      --bg:#081019; --panel:#0f1720; --muted:#93a3b3; --accent:#4A90E2; --gold:#C9A43C; --card:#0f1820; --glass:rgba(255,255,255,0.04);
+      --max-w:1200px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:#e6eef6;background:linear-gradient(180deg,#05070a 0%, #081019 100%)}
+    a{color:inherit}
+    header.site-header{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(6,10,15,0.75);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+    .nav{display:flex;align-items:center;gap:24px;padding:16px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo-circle{width:44px;height:44px;border-radius:50%;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:700;box-shadow:0 4px 18px rgba(74,144,226,0.18)}
+    .brand .meta{line-height:1}
+    .brand .meta small{display:block;font-size:12px;color:var(--muted)}
+    nav.main-nav{margin-left:24px;display:flex;gap:20px;align-items:center}
+    nav.main-nav a{color:var(--muted);text-decoration:none;padding:8px 6px;border-radius:6px}
+    nav.main-nav a:hover{color:#fff}
+    .cta{margin-left:auto}
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;font-weight:600;cursor:pointer}
+    .btn.primary{background:var(--accent);color:#fff;box-shadow:0 8px 24px rgba(74,144,226,0.14);border:none}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    /* Hero */
+    .hero{padding-top:96px;padding-bottom:120px;position:relative}
+    .hero .hero-bg{position:absolute;inset:0;background-image:url('/mnt/data/31b772e7-4ecf-440c-a410-4a4c78d66d98.png');background-size:cover;background-position:center;filter:brightness(0.32) contrast(0.9);z-index:0}
+    .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(6,10,15,0.55), rgba(6,10,15,0.65));z-index:1}
+    .hero .inner{position:relative;z-index:2;max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;text-align:center}
+    .badge-pill{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--muted);font-weight:600;margin-bottom:18px}
+    h1.hero-title{font-size:64px;line-height:1.02;margin:6px 0 6px;color:#fff;font-weight:800}
+    h1 .accent{color:var(--accent)}
+    p.lead{max-width:920px;color:var(--muted);font-size:18px;margin:18px 0 24px}
+    .hero-ctas{display:flex;gap:14px}
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+    /* Sections */
+    section.section{padding:72px 0}
+    .split{display:flex;gap:40px;align-items:center}
+    .split .left{flex:1}
+    .split .right{flex:1}
+    .seal{width:340px;border-radius:14px;box-shadow:0 20px 60px rgba(2,8,23,0.6);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px}
+    .info-card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .info-card h4{margin:0 0 6px}
+    .section-title{font-size:36px;margin:0 0 18px}
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
+    /* Units grid */
+    .units-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:24px}
+    .unit{background:linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
 
-        /* Başlık Alanı (Header) */
-        header {
-            background-color: #0d0d0d;
-            padding: 15px 0;
-            border-bottom: 3px solid var(--accent-color);
-        }
+    footer.site-footer{padding:28px 0;background:transparent;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
 
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo h1 {
-            color: var(--accent-color);
-            font-size: 1.8em;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 10px 15px;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Kahraman Bölgesi (Hero Section) */
-        .hero {
-            background: url('https://via.placeholder.com/1920x600/1e1e1e/808080?text=LAPD+Mid-Wilshire+Görseli') no-repeat center center/cover;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Hafif gölgelendirme */
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h2 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            color: var(--text-color);
-            text-shadow: 2px 2px 5px #000;
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            color: var(--accent-color);
-            text-shadow: 1px 1px 3px #000;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            background-color: var(--accent-color);
-            color: var(--text-color);
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #3b7ad6; /* Açık mavi */
-        }
-
-        /* Bölümler (Sections) */
-        section {
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        section h2 {
-            font-size: 2.2em;
-            color: var(--accent-color);
-            margin-bottom: 40px;
-        }
-
-        /* Departmanlar */
-        .departments-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .dept-card {
-            background-color: var(--card-bg);
-            padding: 25px;
-            border-radius: 8px;
-            text-align: left;
-            border-top: 4px solid var(--accent-color);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .dept-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .dept-card h3 {
-            color: var(--text-color);
-            margin-bottom: 10px;
-        }
-
-        .dept-card p {
-            color: #ccc;
-            font-size: 0.95em;
-        }
-
-        /* Başvuru Formu */
-        .form-section {
-            background-color: #0d0d0d;
-            padding: 60px 0;
-        }
-
-        .application-form {
-            max-width: 600px;
-            margin: auto;
-            text-align: left;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: var(--accent-color);
-        }
-
-        .form-group input[type="text"],
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            background-color: #222;
-            border: 1px solid #333;
-            color: var(--text-color);
-            border-radius: 4px;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #0d0d0d;
-            text-align: center;
-            padding: 20px 0;
-            color: #777;
-            font-size: 0.9em;
-        }
-        /* CSS Bitişi */
-    </style>
+    /* responsive */
+    @media(max-width:900px){
+      h1.hero-title{font-size:36px}
+      .split{flex-direction:column}
+      .seal{width:220px}
+    }
+  </style>
 </head>
 <body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo-circle">07</div>
+        <div class="meta">
+          <strong>LAPD</strong>
+          <small>Mid-Wilshire</small>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Ana navigasyon">
+        <a href="#home">Ana Sayfa</a>
+        <a href="#about">Hakkımızda</a>
+        <a href="#culture">Kültür & Vizyon</a>
+        <a href="#team">Kadro</a>
+        <a href="#police">Ayın Polisi</a>
+        <a href="#rules">Kurallar</a>
+        <a href="#gallery">Galeri</a>
+        <a href="#apply">Başvuru</a>
+      </nav>
+      <div class="cta">
+        <a class="btn ghost" href="#discord">Discord'a Katıl</a>
+        <a class="btn primary" href="#apply" style="margin-left:12px">Başvuru Yap</a>
+      </div>
+    </div>
+  </header>
 
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>MID-WILSHIRE 07</h1>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-bg"></div>
+      <div class="overlay"></div>
+      <div class="inner">
+        <div class="badge-pill">Los Angeles Police Department</div>
+        <h1 class="hero-title">LAPD <span class="accent">Mid-Wilshire</span> Division</h1>
+        <div style="opacity:0.9;color:var(--muted);margin-bottom:6px">Station 07</div>
+        <p class="lead">Los Angeles merkezindeki en prestijli polis istasyonlarından biri olan Mid-Wilshire 07, şehrin güvenliğini sağlamak için 7/24 görev başındadır. Profesyonel roleplay ve gerçekçi prosedürler ile oyunculara üst düzey deneyim sunuyoruz.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#apply">Başvuru Yap</a>
+          <a class="btn ghost" href="#discord">Discord'a Katıl</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container split">
+        <div class="left">
+          <img src="/mnt/data/b8c03113-4771-49d7-a77e-82176d6a9d7a.png" alt="Mid-Wilshire Seal" class="seal" />
+        </div>
+        <div class="right">
+          <h2 class="section-title">Hakkımızda</h2>
+          <p style="color:var(--muted);line-height:1.8"><strong>LAPD Mid-Wilshire Division</strong>, Los Angeles'ın kalbinde yer alan en prestijli ve tarihi polis bölümlerinden biridir. 1920'lerden beri şehrin güvenliğini sağlayan birimimiz, modern polislik anlayışını geleneksel değerlerle harmanlayarak hizmet vermektedir.</p>
+
+          <p style="color:var(--muted);line-height:1.8">Station 07 olarak, toplum odaklı polislik yaklaşımımızla vatandaşlarımızın güvenliğini en üst düzeyde tutmayı hedefliyoruz. Profesyonel kadromuz, ileri teknoloji ekipmanlarımız ve sürekli eğitim programlarımızla Los Angeles'ın en güvenilir polis departmanlarından biri olmaktan gurur duyuyoruz.</p>
+
+          <p style="color:var(--muted);line-height:1.8">Ekibimiz; suç önleme, toplum güvenliği, trafik yönetimi ve acil müdahale konularında uzmanlaşmış deneyimli polislerden oluşmaktadır. Her gün, şehrimizin sokaklarını daha güvenli hale getirmek için özverili bir şekilde çalışıyoruz.</p>
+
+          <div class="cards">
+            <div class="info-card">
+              <h4>🔷 Mükemmellik</h4>
+              <p style="color:var(--muted);margin:6px 0 0">Her işte en iyiyi hedefliyoruz.</p>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Ana Sayfa</a></li>
-                    <li><a href="#departmanlar">Departmanlar</a></li>
-                    <li><a href="#basvuru">Başvuru</a></li>
-                    <li><a href="#">Kadro</a></li>
-                    <li><a href="#">İletişim</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>MID-WILSHIRE 07 POLİS İSTASYONU</h2>
-            <p>"Protect & Serve – LAPD Roleplay Department"</p>
-            <a href="#basvuru" class="btn">Şimdi Başvur</a>
-        </div>
-    </section>
-
-    <section id="departmanlar">
-        <div class="container">
-            <h2>👮‍♂️ Ana Operasyonel Departmanlar</h2>
-            <div class="departments-grid">
-                
-                <div class="dept-card">
-                    <h3>Patrol Division (Devriye)</h3>
-                    <p>Günlük devriye, olaylara ilk müdahale, acil çağrılara hızlı yanıt sağlar ve topluluk güvenliğini önceliklendirir.</p>
-                </div>
-                
-                <div class="dept-card">
-                    <h3>Detective Bureau (Dedektiflik)</h3>
-                    <p>Ciddi suç vakalarını titizlikle soruşturma, delil toplama, vaka takibi ve sanıkların adalete teslim edilmesi.</p>
-                </div>
-                
-                <div class="dept-card">
-                    <h3>SWAT Team</h3>
-                    <p>Yüksek riskli operasyonlar, rehine krizleri, barikat durumları ve özel müdahale gerektiren durumlarda kritik rol üstlenir.</p>
-                </div>
-                
-                <div class="dept-card">
-                    <h3>Traffic Enforcement Unit</h3>
-                    <p>Şehir içi trafik düzenini sağlama, kaza inceleme, alkollü araç kullanımı ve kaçak kazaların soruşturulması.</p>
-
-                </div>
-                
-                <div class="dept-card">
-                    <h3>K9 Unit</h3>
-                    <p>Eğitilmiş köpeklerle (K9) uyuşturucu ve patlayıcı madde aramaları, iz sürme ve tehlikeli şüphelilerin yakalanmasına destek sağlar.</p>
-                </div>
-                
-                <div class="dept-card">
-                    <h3>Cyber & Intelligence Unit</h3>
-                    <p>Dijital suçları analiz etme, siber güvenlik vakalarını soruşturma ve operasyonel istihbarat raporlama.</p>
-                </div>
-
+            <div class="info-card">
+              <h4>👥 Takım Ruhu</h4>
+              <p style="color:var(--muted);margin:6px 0 0">Birlikte daha güçlü görev yapıyoruz.</p>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section class="form-section" id="basvuru">
-        <div class="container">
-            <h2>📝 LAPD Başvuru Formu</h2>
-            <p style="margin-bottom: 30px; color: #aaa;">Lütfen tüm alanları doğru ve eksiksiz doldurunuz.</p>
-            
-            <form class="application-form" action="/api/basvuru" method="POST">
-                <div class="form-group">
-                    <label for="adSoyad">Adınız ve Soyadınız (RP Karakter Adı):</label>
-                    <input type="text" id="adSoyad" name="adSoyad" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="discord">Discord Kullanıcı Adınız:</label>
-                    <input type="text" id="discord" name="discord" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="gecmis">Karakterinizin Geçmişi ve Rol Yapma Deneyimi (Min. 100 Kelime):</label>
-                    <textarea id="gecmis" name="gecmis" required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="neden">Neden Mid-Wilshire 07'yi Seçtiniz?</label>
-                    <textarea id="neden" name="neden" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn" style="width: 100%;">Başvuruyu Gönder</button>
-            </form>
-        </div>
+    <section id="culture" class="section">
+      <div class="container">
+        <h3 class="section-title">Kültür & Vizyon</h3>
+        <p style="color:var(--muted);max-width:900px;line-height:1.8">Toplumla iş birliği, şeffaflık ve adalet ilkeleri ile hareket ederiz. Geleceğe yönelik vizyonumuz; teknolojiyi, eğitimi ve etik liderliği harmanlayarak örnek bir roleplay birimi olmaktır.</p>
+      </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Mid-Wilshire 07 Police Station - LAPD Roleplay Department. Tüm Hakları Saklıdır.</p>
-            <p>Geliştirme ve Entegrasyon: [Geliştiricinizin Adı Buraya Gelecek]</p>
+    <section id="team" class="section">
+      <div class="container">
+        <h3 class="section-title">Birimlerimiz</h3>
+        <div class="units-grid">
+          <div class="unit"><strong>Patrol Division</strong><div style="color:var(--muted);margin-top:8px">Günlük devriyeler, olay müdahaleleri ve raporlama.</div></div>
+          <div class="unit"><strong>Traffic Unit</strong><div style="color:var(--muted);margin-top:8px">Trafik güvenliği, kazalar ve kontroller.</div></div>
+          <div class="unit"><strong>SWAT</strong><div style="color:var(--muted);margin-top:8px">Yüksek riskli operasyonlar ve taktik müdahaleler.</div></div>
+          <div class="unit"><strong>K9 Unit</strong><div style="color:var(--muted);margin-top:8px">Narkotik ve arama-kurtarma destek birimi.</div></div>
+          <div class="unit"><strong>Detective Bureau</strong><div style="color:var(--muted);margin-top:8px">Soruşturmalar, delil analizi ve vakaların çözümü.</div></div>
+          <div class="unit"><strong>Air Support</strong><div style="color:var(--muted);margin-top:8px">Havadan takip ve operasyon desteği.</div></div>
         </div>
-    </footer>
+      </div>
+    </section>
 
+    <section id="apply" class="section">
+      <div class="container" style="max-width:880px;text-align:center">
+        <h3 class="section-title">Başvuru</h3>
+        <p style="color:var(--muted);line-height:1.6">Ekibimize katılmak için başvuru formunu doldurun. Disiplinli, kurallara uygun ve roleplay odaklı adayları bekliyoruz.</p>
+        <!-- Basit form (frontend only) -->
+        <form style="margin-top:18px;display:flex;flex-direction:column;gap:12px">
+          <input type="text" placeholder="Adınız / Takma adınız" style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+          <input type="text" placeholder="Discord#0000" style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+          <textarea placeholder="Kısa karakter geçmişi ve deneyiminiz" rows="4" style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+          <div style="display:flex;gap:12px;justify-content:center;margin-top:8px">
+            <button type="submit" class="btn primary">Başvuruyu Gönder</button>
+            <a class="btn ghost" href="#rules">Kuralları Oku</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="police" class="section">
+      <div class="container">
+        <h3 class="section-title">Ayın Polisi</h3>
+        <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
+          <img src="/mnt/data/b8c03113-4771-49d7-a77e-82176d6a9d7a.png" style="width:180px;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.4)" />
+          <div>
+            <h4 style="margin:0 0 6px">Memur Adı (Yakında)</h4>
+            <p style="color:var(--muted);max-width:600px">Mid-Wilshire 07 bünyesinde görevinde üstün başarı gösteren memur her ay burada sergilenecektir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rules" class="section">
+      <div class="container">
+        <h3 class="section-title">Kurallar</h3>
+        <div style="max-width:900px">
+          <details style="background:var(--card);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);margin-bottom:12px">
+            <summary style="cursor:pointer;font-weight:600">Genel Davranış Kuralları</summary>
+            <p style="color:var(--muted);margin-top:12px">Tüm memurlar saygılı, disiplinli ve profesyonel davranmak zorundadır.</p>
+          </details>
+          <details style="background:var(--card);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);margin-bottom:12px">
+            <summary style="cursor:pointer;font-weight:600">Roleplay Kuralları</summary>
+            <p style="color:var(--muted);margin-top:12px">Gerçekçi prosedürlere uygun hareket edilmeli, failRP ve powergaming yapılmamalıdır.</p>
+          </details>
+          <details style="background:var(--card);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);margin-bottom:12px">
+            <summary style="cursor:pointer;font-weight:600">Operasyon Kuralları</summary>
+            <p style="color:var(--muted);margin-top:12px">Yüksek riskli operasyonlarda ekip liderinin talimatlarına uyulmalıdır.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <h3 class="section-title">Galeri</h3>
+        <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:24px">
+          <div class="g-item" style="position:relative;overflow:hidden;border-radius:14px;border:1px solid rgba(255,255,255,0.05)">
+            <img src="/mnt/data/31b772e7-4ecf-440c-a410-4a4c78d66d98.png" style="width:100%;height:100%;object-fit:cover;transition:0.4s" />
+          </div>
+          <div class="g-item" style="position:relative;overflow:hidden;border-radius:14px;border:1px solid rgba(255,255,255,0.05)">
+            <img src="/mnt/data/b8c03113-4771-49d7-a77e-82176d6a9d7a.png" style="width:100%;height:100%;object-fit:cover;transition:0.4s" />
+          </div>
+          <div class="g-item" style="position:relative;overflow:hidden;border-radius:14px;border:1px solid rgba(255,255,255,0.05)">
+            <img src="/mnt/data/31b772e7-4ecf-440c-a410-4a4c78d66d98.png" style="width:100%;height:100%;object-fit:cover;transition:0.4s" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>© 2025 Mid-Wilshire 07 — LAPD Roleplay</div>
+      <div style="color:var(--muted)">Designed by Readdy</div>
+    </div>
+  </footer>
+<script>
+// basic scroll reveal
+const reveal=()=>{document.querySelectorAll('.section, .unit, .info-card').forEach(el=>{const rect=el.getBoundingClientRect();if(rect.top<window.innerHeight-60){el.style.opacity=1;el.style.transform='translateY(0)';}});} 
+window.addEventListener('scroll',reveal);window.addEventListener('load',reveal);
+</script>
 </body>
 </html>
-```
