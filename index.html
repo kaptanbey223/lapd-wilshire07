@@ -29,7 +29,7 @@
 
     /* Hero */
     .hero{padding-top:96px;padding-bottom:120px;position:relative}
-    .hero .hero-bg{position:absolute;inset:0;background-image:url('/mnt/data/31b772e7-4ecf-440c-a410-4a4c78d66d98.png');background-size:cover;background-position:center;filter:brightness(0.32) contrast(0.9);z-index:0}
+    .hero .hero-bg{position:absolute;inset:0;background-image:url('https://static.wikia.nocookie.net/the-rookie/images/8/89/Rookie2x18_03.jpg');;background-size:cover;background-position:center;filter:brightness(0.32) contrast(0.9);z-index:0}
     .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(6,10,15,0.55), rgba(6,10,15,0.65));z-index:1}
     .hero .inner{position:relative;z-index:2;max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;text-align:center}
     .badge-pill{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--muted);font-weight:600;margin-bottom:18px}
@@ -43,7 +43,7 @@
     .split{display:flex;gap:40px;align-items:center}
     .split .left{flex:1}
     .split .right{flex:1}
-    .seal{width:340px;border-radius:14px;box-shadow:0 20px 60px rgba(2,8,23,0.6);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px}
+    .seal{width:480px;border-radius:14px;box-shadow:0 20px 60px rgba(2,8,23,0.6);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px}
     .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px}
     .info-card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
     .info-card h4{margin:0 0 6px}
@@ -61,6 +61,8 @@
       .split{flex-direction:column}
       .seal{width:220px}
     }
+      .g-item:hover img{transform:scale(1.14);filter:brightness(1.12)}
+    header.site-header.shrink{padding:6px 0;background:rgba(6,10,15,0.9)}
   </style>
 </head>
 <body>
@@ -75,7 +77,8 @@
       </div>
       <nav class="main-nav" aria-label="Ana navigasyon">
         <a href="#home">Ana Sayfa</a>
-        <a href="#about">Hakkımızda</a>
+        <a href="#about"><img src="/mnt/data/7df8010452a36d151f719f29e4c584f1.png" style="width:140px;margin-bottom:18px;display:block" />
+Hakkımızda</a>
         <a href="#culture">Kültür & Vizyon</a>
         <a href="#team">Kadro</a>
         <a href="#police">Ayın Polisi</a>
@@ -109,7 +112,7 @@
     <section id="about" class="section">
       <div class="container split">
         <div class="left">
-          <img src="/mnt/data/b8c03113-4771-49d7-a77e-82176d6a9d7a.png" alt="Mid-Wilshire Seal" class="seal" />
+          <img src="https://s3-screenshots.int-cdn.lcpdfrusercontent.com/monthly_2025_06/midwilshire_logo_coloured.png.bde354012d5c9f0c92a331c828f138ed.png" alt="Mid-Wilshire Seal" class="seal" />
         </div>
         <div class="right">
           <h2 class="section-title">Hakkımızda</h2>
@@ -220,18 +223,149 @@
         </div>
       </div>
     </section>
-  </main>
+      <section id="timeline" class="section">
+      <div class="container">
+        <h3 class="section-title">Tarihçe</h3>
+        <div style="border-left:2px solid var(--accent);padding-left:24px;display:flex;flex-direction:column;gap:24px;max-width:800px">
+          <div><strong>1920</strong><br><span style="color:var(--muted)">Mid-Wilshire Division resmen kuruldu.</span></div>
+          <div><strong>1955</strong><br><span style="color:var(--muted)">Trafik ve devriye ekiplerinin genişletilmesi.</span></div>
+          <div><strong>1984</strong><br><span style="color:var(--muted)">SWAT biriminin istasyona bağlanması.</span></div>
+          <div><strong>2003</strong><br><span style="color:var(--muted)">Air Support ve K9 altyapısının modernizasyonu.</span></div>
+          <div><strong>2025</strong><br><span style="color:var(--muted)">Roleplay birimi olarak en gelişmiş dönemine ulaşma.</span></div>
+        </div>
+      </div>
+    </section>
 
-  <footer class="site-footer">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
-      <div>© 2025 Mid-Wilshire 07 — LAPD Roleplay</div>
-      <div style="color:var(--muted)">Designed by Readdy</div>
-    </div>
-  </footer>
-<script>
-// basic scroll reveal
-const reveal=()=>{document.querySelectorAll('.section, .unit, .info-card').forEach(el=>{const rect=el.getBoundingClientRect();if(rect.top<window.innerHeight-60){el.style.opacity=1;el.style.transform='translateY(0)';}});} 
-window.addEventListener('scroll',reveal);window.addEventListener('load',reveal);
-</script>
-</body>
-</html>
+      <section id="ranks" class="section">
+      <div class="container">
+        <h3 class="section-title">Rütbeler</h3>
+        <div class="rank-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:24px">
+
+  <!-- 17 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/US-O10_insignia.svg/250px-US-O10_insignia.svg.png" style="width:70px;margin-bottom:10px" />
+    <h4>Chief of Police (17)</h4>
+    <p style="color:var(--muted)">Departmanın genel komutanı.</p>
+  </div>
+
+  <!-- 16 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/US-O9_insignia.svg/250px-US-O9_insignia.svg.png" style="width:70px;margin-bottom:10px" />
+    <h4>Assistant Chief (16)</h4>
+    <p style="color:var(--muted)">Ana üç ofisten birinin başı.</p>
+  </div>
+
+  <!-- 15 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/US-O8_insignia.svg/120px-US-O8_insignia.svg.png" style="width:70px;margin-bottom:10px" />
+    <h4>Deputy Chief (15)</h4>
+    <p style="color:var(--muted)">Büyük büroların üst yöneticisi.</p>
+  </div>
+
+  <!-- 14 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/US-O7_insignia.svg/60px-US-O7_insignia.svg.png" style="width:70px;margin-bottom:10px" />
+    <h4>Commander (14)</h4>
+    <p style="color:var(--muted)">Bölge yardımcı komutanı.</p>
+  </div>
+
+  <!-- 13 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/US-O3_insignia.svg/60px-US-O3_insignia.svg.png" style="width:70px;margin-bottom:10px" />
+    <h4>Captain III (13)</h4>
+    <p style="color:var(--muted)">Büyük bölge birim komutanı.</p>
+  </div>
+
+  <!-- 12 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/US-O3_insignia.svg/60px-US-O3_insignia.svg.png" style="width:70px;margin-bottom:10px" />
+    <h4>Captain II (12)</h4>
+    <p style="color:var(--muted)">Geniş bölge birim komutanı.</p>
+  </div>
+
+  <!-- 11 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/US-O3_insignia.svg/60px-US-O3_insignia.svg.png" style="width:70px;margin-bottom:10px" />
+    <h4>Captain I (11)</h4>
+    <p style="color:var(--muted)">Karakol komutanı.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/US-O2_insignia.svg/20px-US-O2_insignia.svg.png" style="width:70px;margin-bottom:10px" />
+    <h4>Lieutenant II (10)</h4>
+    <p style="color:var(--muted)">Uzman birim operasyon lideri.</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/US-O2_insignia.svg/20px-US-O2_insignia.svg.png" style="width:70px;margin-bottom:10px" />
+    <h4>Lieutenant I (9)</h4>
+    <p style="color:var(--muted)">Watch Commander.</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/LAPD_Sergeant-2.jpg/60px-LAPD_Sergeant-2.jpg" style="width:70px;margin-bottom:10px" />
+    <h4>Sergeant II (8)</h4>
+    <p style="color:var(--muted)">Özel birim süpervizörü.</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/LAPD_Sergeant-1.jpg/60px-LAPD_Sergeant-1.jpg" style="width:70px;margin-bottom:10px" />
+    <h4>Sergeant I (7)</h4>
+    <p style="color:var(--muted)">Devriye saha süpervizörü.</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/LAPD_Detective-3.jpg" style="width:70px;margin-bottom:10px" />
+    <h4>Detective III (6)</h4>
+    <p style="color:var(--muted)">Dedektif birimi süpervizörü.</p>
+  </div>
+
+  <!-- 5 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/LAPD_Detective-2.jpg" style="width:70px;margin-bottom:10px" />
+    <h4>Detective II (5)</h4>
+    <p style="color:var(--muted)">Gelişmiş soruşturma lideri.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/LAPD_Detective-1.jpg" style="width:70px;margin-bottom:10px" />
+    <h4>Detective I (4)</h4>
+    <p style="color:var(--muted)">Temel soruşturma dedektifi.</p>
+  </div>
+
+  <!-- 3.5 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/LAPD_PoliceOfficer3plus1.jpg/60px-LAPD_PoliceOfficer3plus1.jpg" style="width:70px;margin-bottom:10px" />
+    <h4>Police Officer III+1 (3.5)</h4>
+    <p style="color:var(--muted)">Kıdemli saha memuru.</p>
+  </div>
+
+  <!-- 3 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/LAPD_PoliceOfficer3.jpg/60px-LAPD_PoliceOfficer3.jpg" style="width:70px;margin-bottom:10px" />
+    <h4>Police Officer III (3)</h4>
+    <p style="color:var(--muted)">Deneyimli devriye memuru.</p>
+  </div>
+
+  <!-- 2 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/LAPD_PoliceOfficer2.jpg/60px-LAPD_PoliceOfficer2.jpg" style="width:70px;margin-bottom:10px" />
+    <h4>Police Officer II (2)</h4>
+    <p style="color:var(--muted)">Standart devriye memuru.</p>
+  </div>
+
+  <!-- 1 -->
+  <div class="rank-card" style="background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/LAPD_PoliceOfficer1.jpg/60px-LAPD_PoliceOfficer1.jpg" style="width:70px;margin-bottom:10px" />
+    <h4>Police Officer I (1)</h4>
+    <p style="color:var(--muted)">Yeni devriye memuru.</p>
+  </div>
+
+  
+
